@@ -152,10 +152,10 @@ function ChatPage() {
     setMessages(newMsgs);
     setLoading(true);
     try {
-      const res = await fetch("https://api.anthropic.com/v1/messages", {
+      const res = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ model: "claude-sonnet-4-20250514", max_tokens: 1000, system: SYSTEM_PROMPT, messages: newMsgs }),
+        body: JSON.stringify({ system: SYSTEM_PROMPT, messages: newMsgs }),
       });
       const data = await res.json();
       const reply = data.content?.map(b => b.text || "").join("") || "Something went wrong.";
@@ -249,11 +249,11 @@ function ComparePage() {
     if (!car1.trim() || !car2.trim()) return;
     setLoading(true); setResult("");
     try {
-      const res = await fetch("https://api.anthropic.com/v1/messages", {
+      const res = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          model: "claude-sonnet-4-20250514", max_tokens: 1000,
+          system: "You are a car expert for Indian market.",
           messages: [{ role: "user", content: `Compare ${car1} vs ${car2} for Indian buyers. Cover: price, mileage, maintenance cost, common issues, verdict. Be specific and concise.` }],
         }),
       });
