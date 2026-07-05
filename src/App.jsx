@@ -31,20 +31,29 @@ function Logo() {
         width: 38, height: 38, borderRadius: 10,
         background: `linear-gradient(135deg, ${C.blueDark}, ${C.blue})`,
         display: "flex", alignItems: "center", justifyContent: "center",
-        fontSize: 18, boxShadow: `0 0 16px rgba(59,130,246,0.35)`,
-      }}>🚗</div>
+        boxShadow: `0 0 16px rgba(59,130,246,0.35)`,
+      }}>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4.5 16.5V12.8C4.5 12.3 4.65 11.82 4.93 11.42L6.6 9.03C6.98 8.49 7.6 8.16 8.26 8.16H15.74C16.4 8.16 17.02 8.49 17.4 9.03L19.07 11.42C19.35 11.82 19.5 12.3 19.5 12.8V16.5" stroke="white" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M3 16.5H21" stroke="white" strokeWidth="1.6" strokeLinecap="round"/>
+          <path d="M3 16.5V18.3C3 18.85 3.45 19.3 4 19.3H5.2C5.75 19.3 6.2 18.85 6.2 18.3V16.5" stroke="white" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M17.8 16.5V18.3C17.8 18.85 18.25 19.3 18.8 19.3H20C20.55 19.3 21 18.85 21 18.3V16.5" stroke="white" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+          <circle cx="7.5" cy="16.5" r="1.4" fill={C.blueDark} stroke="white" strokeWidth="1.1"/>
+          <circle cx="16.5" cy="16.5" r="1.4" fill={C.blueDark} stroke="white" strokeWidth="1.1"/>
+          <path d="M7 8.16L8.3 5.6C8.5 5.22 8.9 5 9.32 5H14.68C15.1 5 15.5 5.22 15.7 5.6L17 8.16" stroke="white" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      </div>
       <div>
         <div style={{ color: C.white, fontWeight: 800, fontSize: 18, letterSpacing: "-0.5px" }}>
           CarWise<span style={{ color: C.blue }}>AI</span>
         </div>
-        <div style={{ color: C.greyDark, fontSize: 9, fontFamily: "monospace", letterSpacing: "1px" }}>
+        <div style={{ color: C.greyDark, fontSize: 9, fontFamily: "inherit", fontWeight: 600, letterSpacing: "1.5px" }}>
           INDIA'S CAR ADVISOR
         </div>
       </div>
     </div>
   );
 }
-
 function NavBtn({ label, icon, active, onClick }) {
   return (
     <button onClick={onClick} style={{
