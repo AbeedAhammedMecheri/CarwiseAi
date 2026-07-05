@@ -231,7 +231,7 @@ function ChatPage() {
                 color: m.role === "assistant" ? C.grey : C.white,
                 borderRadius: m.role === "user" ? "16px 16px 4px 16px" : "16px 16px 16px 4px",
                 border: m.role === "assistant" ? `1px solid ${C.border}` : "none",
-                fontSize: 13.5, lineHeight: 1.65, fontFamily: m.role === "assistant" ? "monospace" : "inherit",
+               fontSize: 13.5, lineHeight: 1.65, fontFamily: "inherit",
               }}>
                 {m.role === "assistant" ? fmt(m.content) : m.content}
               </div>
