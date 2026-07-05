@@ -103,6 +103,31 @@ function HomePage({ setPage }) {
           Ask AI Advisor →
         </BlueBtn>
       </div>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, marginBottom: 32 }}>
+  {[
+    { url: "https://images.unsplash.com/photo-1573710459621-bb101783ca0f?w=600&q=80&auto=format&fit=crop", label: "Sedans" },
+    { url: "https://images.unsplash.com/photo-1646844371347-e7eab6275747?w=600&q=80&auto=format&fit=crop", label: "SUVs" },
+    { url: "https://images.unsplash.com/photo-1547500393-96e64b79e788?w=600&q=80&auto=format&fit=crop", label: "Hatchbacks" },
+    { url: "https://images.unsplash.com/photo-1691846243759-b0df504ba04d?w=600&q=80&auto=format&fit=crop", label: "Showroom Picks" },
+  ].map((img, i) => (
+    <div key={i} style={{
+      position: "relative", borderRadius: 14, overflow: "hidden", height: 110,
+      border: `1px solid ${C.border}`, boxShadow: "0 4px 16px rgba(0,0,0,0.25)",
+    }}>
+      <img src={img.url} alt={img.label} loading="lazy" style={{
+        width: "100%", height: "100%", objectFit: "cover", display: "block",
+      }} />
+      <div style={{
+        position: "absolute", inset: 0,
+        background: "linear-gradient(to top, rgba(8,15,30,0.85), rgba(8,15,30,0) 60%)",
+      }} />
+      <div style={{
+        position: "absolute", bottom: 8, left: 10,
+        color: C.white, fontSize: 12, fontWeight: 700, letterSpacing: "0.2px",
+      }}>{img.label}</div>
+    </div>
+  ))}
+</div>
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
         {features.map((f, i) => (
           <div key={i} onClick={() => setPage(f.page)} style={{
