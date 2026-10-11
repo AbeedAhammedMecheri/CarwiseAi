@@ -1,0 +1,7 @@
+{
+  "redirects": [
+    { "source": "/chat", "destination": "/", "permanent": true },
+    { "source": "/compare", "destination": "/", "permanent": true },
+    { "source": "/checklist", "destination": "/", "permanent": true }
+  ]
+}
